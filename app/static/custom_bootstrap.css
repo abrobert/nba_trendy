@@ -1,0 +1,13 @@
+.bg-win {
+    background-color: rgb(97, 165, 97); 
+}
+.bg-loss {
+    background-color: lightcoral;
+}
+
+#link_badge {
+    background-color: #18bc9c;
+}
+#link_badge:hover {
+    background-color:#14a085;
+}

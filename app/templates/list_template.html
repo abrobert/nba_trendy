@@ -1,0 +1,39 @@
+{% extends "appbuilder/general/model/list.html" %}
+
+{% block list_search scoped %}
+        {{ super() }}
+        <center>
+        <h4><b>All time: {{all_plays.total_wins}}-{{all_plays.total_losses}}-{{all_plays.total_pushes}} | Profit: ${{all_plays.total_profit}}</b></h4>
+        <br>
+        <a href="?_flt_6_bet=ML"><h5><i>ATS: {{all_plays.total_ats_wins}}-{{all_plays.total_ats_losses}}-{{all_plays.total_ats_pushes}} | Profit: ${{all_plays.total_ats_profit}}</i></h5></a>
+        <a href="?_flt_2_bet=ML"><h5><i>ML: {{all_plays.total_moneyline_wins}}-{{all_plays.total_moneyline_losses}}-{{all_plays.total_moneyline_pushes}} | Profit: ${{all_plays.total_moneyline_profit}}</i></h5></a>
+        <a href="?_flt_0_wager=200"><h5><i>Double Unit: {{all_plays.total_2u_wins}}-{{all_plays.total_2u_losses}}-{{all_plays.total_2u_pushes}} | Profit: ${{all_plays.total_2u_profit}}</i></h5></a>
+        <br>
+        <br>
+        <h4>Last 3 Days: {{last_three.total_wins}}-{{last_three.total_losses}}-{{last_three.total_pushes}} | Profit: ${{last_three.total_profit}}</h4>
+        <h4>Last 7 Days: {{last_seven.total_wins}}-{{last_seven.total_losses}}-{{last_seven.total_pushes}} | Profit: ${{last_seven.total_profit}}</h4>
+        <h4>Last 30 Days: {{last_thirty.total_wins}}-{{last_thirty.total_losses}}-{{last_thirty.total_pushes}} | Profit: ${{last_thirty.total_profit}}</h4>
+        <br>
+        <a href="?">
+            <button type="submit" class="btn  btn-sm btn-primary">Show All Results
+                <i class="fa fa-search"></i>           
+            </button>
+            </a>
+         <a href="{{last_three_filter}}">
+            <button type="submit" class="btn  btn-sm btn-primary">Show Last Three Days
+                <i class="fa fa-search"></i>           
+            </button>
+            </a>
+        <a href="{{last_seven_filter}}">
+        <button type="submit" class="btn  btn-sm btn-primary">Show Last Seven Days
+            <i class="fa fa-search"></i>           
+        </button>
+        </a>
+        <a href="{{last_thirty_filter}}">
+            <button type="submit" class="btn  btn-sm btn-primary">Show Thirty Days
+                <i class="fa fa-search"></i>           
+            </button>
+            </a>
+        </center>
+
+    {% endblock %}
