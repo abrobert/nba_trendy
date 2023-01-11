@@ -2,13 +2,14 @@ import logging
 
 from flask import Flask
 from flask_appbuilder import AppBuilder, SQLA
-
+from flask_migrate import Migrate
 """
  Logging configuration
 """
 
 logging.basicConfig(format="%(asctime)s:%(levelname)s:%(name)s:%(message)s")
 logging.getLogger().setLevel(logging.DEBUG)
+#logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)ß
 
 app = Flask(__name__)
 app.config.from_object("config")

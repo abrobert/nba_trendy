@@ -15,14 +15,13 @@ from sqlalchemy import Column, Date, ForeignKey, Integer, String, Float
 from sqlalchemy.orm import relationship
 from flask_appbuilder.models.decorators import renders
 from flask import Markup
-
 mindate = datetime.date(datetime.MINYEAR, 1, 1)
 
 
 class Play(Model): 
     __tablename__ = 'plays'
 
-    id = Column(Integer, primary_key = True)
+    id = Column(Integer, primary_key = True, autoincrement = True)
     date = Column(Date)
     away_team = Column(String(20))
     home_team = Column(String(20))
@@ -87,7 +86,7 @@ class Play(Model):
 
            # return Markup('<td class="table-success">'+str(input)+'</td>')
  
-    @renders('result')
+    @renders('date')
     def custom_date(self):
         away = self.away_team
         home = self.home_team
@@ -122,6 +121,6 @@ class Play(Model):
         else:
             return Markup('$' + str(self.wager) + '</b>')
 
-    def __repr__(self):
-        return (self.away_team)
+    # def __repr__(self):
+    #     return (self.away_team)
 
