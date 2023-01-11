@@ -32,3 +32,6 @@ def set_sqlite_pragma(dbapi_connection, connection_record):
 """
 
 from . import views
+
+if __name__ == "__main__":
+    app.run()
