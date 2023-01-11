@@ -18,6 +18,7 @@ SECRET_KEY = "\2\1thisismyscretkey\1\2\e\y\y\h"
 db_pwd = os.environ['db_pwd']
 SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:'+str(db_pwd)+'@database-1.cfvon773bboy.us-east-1.rds.amazonaws.com/plays'
 
+SQLALCHEMY_TRACK_MODIFICATIONS = 'False'
 # Flask-WTF flag for CSRF
 CSRF_ENABLED = True
 
