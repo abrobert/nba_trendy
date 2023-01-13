@@ -58,3 +58,4 @@ def create_app() -> Flask:
         return app
     except Exception as ex:
         raise ex
+
