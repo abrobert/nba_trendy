@@ -19,6 +19,7 @@ def create_app() -> Flask:
         #logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)ß
         with app.app_context():
         # app = Flask(__name__)
+            
             app.config.from_object("config")
             db = SQLA(app)
             from views import CustomPlayModelView, PlayModelView, PlayChartView, PlayChartView2, MyView
@@ -27,6 +28,7 @@ def create_app() -> Flask:
 
             #appbuilder = AppBuilder(app, db.session)
             appbuilder = AppBuilder(app, db.session, base_template='custom_base.html')
+            db.create_all()
 
 
             from views import CustomPlayModelView, PlayModelView, PlayChartView, PlayChartView2, MyView

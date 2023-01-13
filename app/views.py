@@ -606,29 +606,29 @@ class MyView(BaseView):
                             param1 = param1)
 
         
-db.create_all()
-appbuilder.add_view(
-    PlayModelView, "List Plays", icon="fa-envelope", category="Plays"
-)
-appbuilder.add_view(
-    CustomPlayModelView, "List Custom Plays", icon="fa-envelope", category="Plays"
-)
-#appbuilder.add_view(CustomPlayModelView, "List Custom Plays", href=CustomPlayModelView.endpoint+"/table/", icon="fa-envelope", category="Plays")
-appbuilder.add_view(
-    PlayChartView,
-    "Show Play Chart",
-    icon="fa-dashboard",
-    category="Statistics",
-)
-appbuilder.add_view(
-    PlayChartView2,
-    "Show Play Chart2",
-    icon="fa-dashboard",
-    category="Statistics",
-)
-appbuilder.add_view(MyView, "Method1", category='My View')
-appbuilder.add_link("Method2", href='/myview/method2/john', category='My View')
-appbuilder.add_link("Method3", href='/myview/method3/john', category='My View')
+#db.create_all()
+# appbuilder.add_view(
+#     PlayModelView, "List Plays", icon="fa-envelope", category="Plays"
+# )
+# appbuilder.add_view(
+#     CustomPlayModelView, "List Custom Plays", icon="fa-envelope", category="Plays"
+# )
+# #appbuilder.add_view(CustomPlayModelView, "List Custom Plays", href=CustomPlayModelView.endpoint+"/table/", icon="fa-envelope", category="Plays")
+# appbuilder.add_view(
+#     PlayChartView,
+#     "Show Play Chart",
+#     icon="fa-dashboard",
+#     category="Statistics",
+# )
+# appbuilder.add_view(
+#     PlayChartView2,
+#     "Show Play Chart2",
+#     icon="fa-dashboard",
+#     category="Statistics",
+# )
+# appbuilder.add_view(MyView, "Method1", category='My View')
+# appbuilder.add_link("Method2", href='/myview/method2/john', category='My View')
+# appbuilder.add_link("Method3", href='/myview/method3/john', category='My View')
 
 """
     Create your Model based REST API::
