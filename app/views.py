@@ -147,6 +147,8 @@ class CustomPlayModelView(ModelView):
     from plays  WHERE date >= :from_date  and  date <= :to_date ;
         '''
 
+    appbuilder.get_session.commit()
+
     all = datetime(2022, 10, 1).strftime('%Y-%m-%d')
     yesterday_date = (datetime.today() - timedelta(1)).strftime('%Y-%m-%d')
     three_days_ago = (datetime.today() - timedelta(3)).strftime('%Y-%m-%d')
