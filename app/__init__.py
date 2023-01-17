@@ -32,7 +32,7 @@ with app.app_context():
     appbuilder = AppBuilder(app, db.session, base_template='custom_base.html')
     db.create_all()
 
-    from views import PlayModelView
+    from .views import PlayModelView
 
     #from views import CustomPlayModelView, PlayModelView, PlayChartView, PlayChartView2, MyView
     appbuilder.add_view(
