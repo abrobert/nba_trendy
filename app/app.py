@@ -1,6 +1,6 @@
 import logging
 
-from flask import current_app, Flask
+from flask import  Flask
 
 from flask_appbuilder import AppBuilder, SQLA
 
