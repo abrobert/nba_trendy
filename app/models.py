@@ -105,7 +105,7 @@ class Play(Model):
         elif (self.result == 'Loss'):
             return Markup('<span class="badge bg-loss" > '+str(self.result)+'</span>')
         else:
-            return self.result
+            return Markup(self.result)
  
     @renders('profit')
     def custom_profit(self):
