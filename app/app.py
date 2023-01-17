@@ -32,4 +32,6 @@ with app.app_context():
     appbuilder.add_view(
         CustomPlayModelView, "List Custom Plays", icon="fa-envelope", category="Plays"
     )
+    appbuilder.session.expire_all()
+    db.session.expire_all()
   
