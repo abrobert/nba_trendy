@@ -147,8 +147,7 @@ class CustomPlayModelView(ModelView):
     from plays  WHERE date >= :from_date  and  date <= :to_date ;
         '''
 
-    appbuilder.get_session.commit()
-
+    appbuilder.get_session.expire_all()
     all = datetime(2022, 10, 1).strftime('%Y-%m-%d')
     yesterday_date = (datetime.today() - timedelta(1)).strftime('%Y-%m-%d')
     three_days_ago = (datetime.today() - timedelta(3)).strftime('%Y-%m-%d')
@@ -188,6 +187,8 @@ class CustomPlayModelView(ModelView):
     total_2u_profit = appbuilder.get_session.query( func.sum(Play.profit).label("total_2u_profit")).where((Play.date >= all) & (Play.date <= today) & (Play.wager == 200)).first()[0]
     if (total_2u_profit == None):
         total_2u_profit = 0
+
+    
     all_plays = {
         'total_wins': total_wins, 
         'total_losses': total_losses, 
