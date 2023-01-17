@@ -6,7 +6,7 @@ from flask_appbuilder import ModelView
 from .models import Play
 from sqlalchemy.sql import func
 from datetime import datetime, timedelta
-from . import appbuilder, db
+from .app import appbuilder, db
 
 
 class PlayModelView(ModelView):
