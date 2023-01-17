@@ -32,15 +32,15 @@ with app.app_context():
     appbuilder = AppBuilder(app, db.session, base_template='custom_base.html')
     db.create_all()
 
-    from .views import PlayModelView
+    from .views import PlayModelView, CustomPlayModelView
 
     #from views import CustomPlayModelView, PlayModelView, PlayChartView, PlayChartView2, MyView
     appbuilder.add_view(
         PlayModelView, "List Plays", icon="fa-envelope", category="Plays"
     )
-    # appbuilder.add_view(
-    #     CustomPlayModelView, "List Custom Plays", icon="fa-envelope", category="Plays"
-    # )
+    appbuilder.add_view(
+        CustomPlayModelView, "List Custom Plays", icon="fa-envelope", category="Plays"
+    )
     # #appbuilder.add_view(CustomPlayModelView, "List Custom Plays", href=CustomPlayModelView.endpoint+"/table/", icon="fa-envelope", category="Plays")
     # appbuilder.add_view(
     #     PlayChartView,
