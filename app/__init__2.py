@@ -1,7 +1,7 @@
 import logging
 
 from flask import   Flask
-
+from app import app as curr_app
 from flask_appbuilder import AppBuilder, SQLA
 
 """
@@ -17,13 +17,14 @@ app = Flask(__name__)
 logging.basicConfig(format="%(asctime)s:%(levelname)s:%(name)s:%(message)s")
 logging.getLogger().setLevel(logging.DEBUG)
 
+db = SQLA(app)
 
 #logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)ß
 with app.app_context():
 # app = Flask(__name__)
     
     app.config.from_object("config")
-    db = SQLA(app)
+    
     #from views import CustomPlayModelView, PlayModelView, PlayChartView, PlayChartView2, MyView
 
     db.init_app(app)
