@@ -10,7 +10,10 @@ from flask_appbuilder import ModelView, ModelRestApi, BaseView, expose, has_acce
 from .models import Play
 from flask_appbuilder.models.group import aggregate_avg, aggregate_sum, aggregate_count
 from .widgets import MyListWidget
-from . import appbuilder, db
+from app import app as current_app 
+from app import appbuilder
+from app import db 
+#from flask import current_app
 from datetime import datetime, timedelta
 from sqlalchemy import Column, Date, ForeignKey, Integer, String, Float
 from sqlalchemy.sql import func

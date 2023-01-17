@@ -15,3 +15,5 @@ logging.getLogger().setLevel(logging.DEBUG)
 #logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)ß
 
 app: Flask = current_app
+appbuilder = AppBuilder(update_perms=False)
+db = SQLA()
