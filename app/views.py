@@ -1,20 +1,10 @@
 from flask import render_template, request
 from flask_appbuilder.models.sqla.interface import SQLAInterface
-from flask_appbuilder.models.sqla.filters import FilterEqual, FilterGreater, BaseFilter, FilterSmaller
-from flask_appbuilder.models.sqla import filters
-from sqlalchemy import or_, and_
-from sqlalchemy.sql import text
 from flask_appbuilder.actions import action
 from flask import redirect
-from flask_appbuilder import ModelView, ModelRestApi, BaseView, expose, has_access, DirectByChartView, GroupByChartView
+from flask_appbuilder import ModelView
 from .models import Play
-from flask_appbuilder.models.group import aggregate_avg, aggregate_sum, aggregate_count
-from .widgets import MyListWidget
 
-#from flask import current_app
-from datetime import datetime, timedelta
-from sqlalchemy import Column, Date, ForeignKey, Integer, String, Float
-from sqlalchemy.sql import func
 
 class PlayModelView(ModelView):
 
